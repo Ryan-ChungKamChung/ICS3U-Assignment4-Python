@@ -19,12 +19,16 @@ def main():
     try:
         length = int(length_string)
         width = int(width_string)
+        
+        assert length and width > 0
 
         if length == width:
             print("These 2 measurements form a square!")
         else:
             print("These 2 measurements do not form a square!")
 
+    except AssertionError:
+        print("Negative side lengths are not allowed")
     except Exception:
         print("One or both of the inputted measurements are not valid")
 
